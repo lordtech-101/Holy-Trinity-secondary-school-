@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Portal</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background-image: url(https://i.postimg.cc/L5FYZ88t/93de9f8531717d4238295c70ff39ceb9.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .box {
+      width: 330px;
+      background-color: transparent;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 12px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      color: white;
+    }
+
+    input, button {
+      width: 250px;
+      margin-top: 12px;
+      padding: 10px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover,
+    input:hover {
+      box-shadow: 0 0 5px 2px rgba(192,191,191,0.9);
+    }
+
+    #msg {
+      margin-top: 12px;
+      color: #ffb4b4;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Student Login</h2>
+
+  <form id="loginForm">
+    <input placeholder="Username" id="login_username" required>
+    <input type="password" placeholder="Password" id="login_password" required>
+    <button>Login</button>
+   
+  </form>
+ <a href="../school-portal/">Back</a>
+  <p id="msg"></p>
+</div>
+
+<script>
+const API = "https://odogid101-project-361b.onrender.com";
+
+loginForm.onsubmit = async e => {
+  e.preventDefault();
+  msg.innerText = "Logging in...";
+
+  const res = await fetch(`${API}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: login_username.value,
+      password: login_password.value
+    })
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    msg.innerText = data.error;
+    return;
+  }
+
+  localStorage.setItem("user", JSON.stringify(data));
+  window.location.href = "../student-dashboard/";
+};
+</script>
+
+</body>
+</html>
