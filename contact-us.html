@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+<link rel="icon" type="image/x-icon" href="https://share.google/0onSoNiAJoyA3mXi0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+/* styles.css
+   Full stylesheet: layered blob background on BODY + gooey liquid ball + styled contact form.
+   Paste this into your <style> tag or save as styles.css and link it from your HTML.
+*/:root{
+  --cobalt:#0047ab;
+  --card-bg:rgba(255,255,255,0.12);
+  --border:rgba(255,255,255,0.25);
+  --text:#ffffff;
+  --muted:rgba(255,255,255,0.75);
+  --accent:#2563eb;
+}
+
+/* RESET */
+*{
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:var(--cobalt);
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* TITLE */
+h1{
+  margin-bottom:20px;
+  font-size:32px;
+}
+
+/* FORM CARD */
+#form{
+  width:100%;
+  max-width:600px;
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:30px;
+  backdrop-filter:blur(6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* INPUT FIELDS */
+.field{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:18px;
+}
+
+label{
+  margin-bottom:6px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+input[type="text"],
+textarea{
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.08);
+  color:white;
+  font-size:15px;
+  outline:none;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:rgba(255,255,255,0.6);
+}
+
+input:focus,
+textarea:focus{
+  border-color:#ffffff;
+  background:rgba(255,255,255,0.12);
+}
+
+/* TEXTAREA */
+textarea{
+  min-height:130px;
+  resize:none;
+}
+
+/* SUBMIT BUTTON */
+#button{
+  width:100%;
+  margin-top:10px;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:#ffffff;
+  color:#0047ab;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  h1{ font-size:26px; }
+  #form{ padding:20px; }
+}
+    </style>
+</head>
+<body>
+      
+    
+  <h1>Contact Us</h1>
+   <form id="form">
+    
+  <div class="field">
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" required="">
+  </div>
+  <div class="field">
+    <label for="email_id">email_id</label>
+    <input type="text" name="email_id" id="email_id" required="">
+  </div>
+  <div class="field">
+    <label for="message">message</label>
+    <textarea name="message" id="message" required=""></textarea>
+        
+  </div>
+
+  <input type="submit" id="button" value="Send Email" >
+ <a href="../school-portal/">
+   <div class="button" style="padding:5px; background: white; width:40px; border-radius:10px; color:black;">back</div></a>
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('2aG5YTJP2LX-0Kz3m')
+
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'service_qvaqmbd';
+   const templateID = 'template_dvjiz4l';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+</body>
+</html> 

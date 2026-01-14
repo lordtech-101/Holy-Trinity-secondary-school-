@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HOLY TRINITY SECONDARY SCHOOL IHEAKA</title>
+
+<link rel="icon" type="image/png"
+ href="https://images.template.net/422245/Educational-School-Logo-Template-edit-online.png"/>
+
+<style>
+:root{
+  --cobalt: #0047ab;
+  --royal: #1e40af;
+  --card-bg: rgba(255,255,255,0.12);
+  --border: rgba(255,255,255,0.18);
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.8);
+  --primary: #2563eb;
+}
+
+*{box-sizing:border-box;}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  font-family: Arial, sans-serif;
+  background: var(--cobalt);
+  color: var(--text);
+  overflow-x:hidden;
+}
+
+/* ===== ROYAL BLUE CIRCLES ===== */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background: radial-gradient(circle, rgba(30,64,175,0.6), transparent 70%);
+  z-index:0;
+}
+
+body::before{
+  top:-120px;
+  left:-120px;
+}
+
+body::after{
+  bottom:-140px;
+  right:-140px;
+}
+
+/* ===== HEADER ===== */
+header{
+  text-align:center;
+  padding:22px;
+  position:relative;
+  z-index:2;
+}
+
+header img{
+  width:60px;
+  height:60px;
+  border-radius:8px;
+}
+
+header h1{
+  margin:10px 0 6px;
+  font-size:20px;
+}
+
+header p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.portal-btn{
+  position:absolute;
+  right:20px;
+  top:20px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  cursor:pointer;
+}
+
+.portal-btn:hover{
+  opacity:.9;
+}
+
+/* ===== NAV ===== */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:14px;
+  flex-wrap:wrap;
+  position:relative;
+  z-index:2;
+}
+
+nav a{text-decoration:none;}
+
+nav button{
+  padding:8px 14px;
+  border-radius:8px;
+  background:transparent;
+  border:1px solid var(--border);
+  color:white;
+  cursor:pointer;
+}
+
+nav button:hover{
+  background:rgba(255,255,255,0.18);
+}
+
+/* ===== MAIN ===== */
+main{
+  max-width:1000px;
+  margin:30px auto;
+  padding:18px;
+  position:relative;
+  z-index:2;
+}
+
+/* ===== CARDS ===== */
+.card{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:22px;
+  margin-bottom:22px;
+  backdrop-filter: blur(6px);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:18px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.card a{
+  color:#bfdbfe;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:14px;
+  font-size:12px;
+  color:var(--muted);
+  position:relative;
+  z-index:2;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:720px){
+  header h1{font-size:18px;}
+  .portal-btn{top:12px; right:12px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://images.template.net/422245/Educational-School-Logo-Template-edit-online.png"
+   alt="Holy Trinity Secondary School"/>
+  <h1>Holy Trinity Secondary School Iheaka</h1>
+  <p>Excellence in Education and Character Building</p>
+  <a href="../student-login/"><button class="portal-btn">Student Portal</button></a>
+</header>
+
+<nav>
+  <a href="#home"><button>Home</button></a>
+  <a href="#about"><button>About Us</button></a>
+  <a href="#admissions"><button>Admissions</button></a>
+  <a href="#student-portal"><button>Student Portal</button></a>
+  <a href="#contact"><button>Contact</button></a>
+</nav>
+
+<main>
+  <section class="card" id="home">
+    <h2>Welcome</h2>
+    <p>We are glad to have you here.</p>
+  </section>
+
+  <section class="card" id="about">
+    <h2>About Us</h2>
+    <p>
+      Holy Trinity Secondary School Iheaka is committed to providing quality
+      education and fostering a nurturing environment for our students.
+    </p>
+  </section>
+
+  <section class="card" id="admissions">
+    <h2>Admissions</h2>
+    <p>
+      We welcome applications from students eager to learn and grow.
+      <a href="index.html">Read more</a>
+    </p>
+  </section>
+
+  <section class="card" id="student-portal">
+    <h2>Student Portal</h2>
+    <p>
+      Access grades, assignments and school resources.
+       <a href="../student-login/">Open Portal</a>
+    </p>
+  </section>
+
+  <section class="card" id="contact">
+    <h2>Contact Us</h2>
+    <p>
+      Need help?  <a href="../contact-us/">Contact Page</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2026 Holy Trinity Secondary School Iheaka. All rights reserved.
+</footer>
+
+</body>
+</html>
